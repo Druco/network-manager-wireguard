@@ -274,7 +274,7 @@ ip4_to_gvariant (const char *str)
 	else{
 		res = g_variant_new_uint32 (temp_addr.s_addr);
 	}
-	
+
 	g_strfreev(tmp);
 	g_strfreev(tmp2);
 	g_free(addr);
@@ -326,7 +326,7 @@ send_config(gpointer data)
 {
 	Configs *cfgs = data;
 
-	nm_vpn_service_plugin_set_config(cfgs->plugin, cfgs->config);							
+	nm_vpn_service_plugin_set_config(cfgs->plugin, cfgs->config);
 
 	if(cfgs->ip4config){
 		nm_vpn_service_plugin_set_ip4_config(cfgs->plugin, cfgs->ip4config);
@@ -472,7 +472,7 @@ set_config(NMVpnServicePlugin *plugin, NMConnection *connection)
 // export this configuration to a temporary file (/tmp/CONNECTION-ID.conf)
 // and call wg-quick on this script
 // the temporary file gets deleted immediately after wg-quick has completed
-// 
+//
 // in order to be able to disconnect properly, the configuration string
 // and filename are saved in the plugin's private data, such that the
 // temporary file can be re-created in the Disconnect() method
